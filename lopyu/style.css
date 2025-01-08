@@ -1,0 +1,290 @@
+/*
+Theme Name: Lopyu Nolep
+Theme URI: http://example.com/lopyu-nolep/
+Author: Yes Singsae Hokibae Bilhaq
+Author URI: http://example.com/
+Description: A theme for manga and novel enthusiasts
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lopyu-nolep
+*/
+
+/* Root variables */
+:root {
+    --primary-color: #87CEEB;
+    --secondary-color: #E6F7FF;
+    --background-color: #FFFFFF;
+    --text-color: #333333;
+    --light-text: #FFFFFF;
+}
+
+/* Night mode colors */
+.night-mode {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --background-color: #0f3460;
+    --text-color: #e94560;
+    --light-text: #f1f1f1;
+}
+
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--light-text) !important;
+}
+
+.btn-outline-light:hover {
+    color: var(--primary-color);
+    background-color: var(--light-text);
+}
+
+/* Night mode toggle */
+#nightModeToggle i {
+    transition: transform 0.3s;
+}
+
+.night-mode #nightModeToggle i {
+    transform: rotate(180deg);
+}
+
+/* Section titles */
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Cards */
+.card {
+    border: none;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: var(--secondary-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Genre list */
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.genre-list a {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.genre-list a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--light-text);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        background-color: var(--secondary-color);
+        padding: 10px;
+    }
+
+    .nav-link {
+        color: var(--primary-color) !important;
+    }
+}
+
+/* Additional styles */
+main {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.btn-light {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-light:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+input.form-control {
+    border: 1px solid var(--primary-color);
+}
+
+input.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(135, 206, 235, 0.25);
+}
+
+/* Preloader */
+body {
+    overflow: hidden;
+}
+
+body.loaded {
+    overflow: auto;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-content {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.loading-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.preloader-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Sakura effect */
+#sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+#sakura-container.hidden {
+    display: none;
+}
+
+#sakura {
+    width: 100%;
+    height: 100%;
+}
+
+/* Madara Core Compatibility Styles */
+.wp-manga-section {
+    margin-bottom: 30px;
+}
+
+.wp-manga-chapter {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.wp-manga-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Manga Card Styles */
+.manga-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.manga-card:hover {
+    transform: translateY(-5px);
+}
+
+.manga-card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.manga-card-link:hover {
+    text-decoration: none;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
